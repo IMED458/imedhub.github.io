@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
  <head>
   <meta charset="UTF-8">
@@ -129,6 +130,7 @@
         .card:nth-child(2) { animation-delay: 0.2s; }
         .card:nth-child(3) { animation-delay: 0.3s; }
         .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
@@ -290,6 +292,12 @@
       </svg>
       <h3 class="card-title" id="card4-title">მორიგეობის კალენდარი</h3>
       <p class="card-subtitle" id="card4-subtitle">Duty schedule calendar</p><button class="card-button" onclick="openLink('https://imed458.github.io/calendar.github.io/')">Open</button>
+     </div><!-- New Card 5: Inpatient -->
+     <div class="card">
+      <svg class="card-icon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6"></path><polyline points="9 10 4 15 9 20"></polyline><path d="M20 4H9.5a2 2 0 0 0 0 4h11a2 2 0 0 1 2 2v9"></path></svg>
+      <h3 class="card-title" id="card5-title">საწოლების მართვის სისტემა</h3>
+      <p class="card-subtitle" id="card5-subtitle">Bed and Patient Management in Inpatient Ward</p>
+      <button class="card-button" onclick="openLink('https://imed458.github.io/inpatienter.github.io/')">Open</button>
      </div>
     </div>
    </main><!-- Footer -->
@@ -311,7 +319,9 @@
             card3_subtitle: "Appointment site",
             card4_title: "მორიგეობის კალენდარი",
             card4_subtitle: "Duty schedule calendar",
-            footer_text: "© 2024 IMED Hub. Created for clinic efficiency.",
+            card5_title: "საწოლების მართვის სისტემა",
+            card5_subtitle: "Bed and Patient Management in Inpatient Ward",
+            footer_text: "© 2025 IMED Hub. Created for clinic efficiency.",
             background_color: "#f8fafc",
             primary_color: "#0ea5e9",
             text_color: "#1e293b",
@@ -333,7 +343,7 @@
             document.getElementById('main-title').textContent = config.main_title || defaultConfig.main_title;
             document.getElementById('subtitle-ka').textContent = config.subtitle_ka || defaultConfig.subtitle_ka;
             document.getElementById('subtitle-en').textContent = config.subtitle_en || defaultConfig.subtitle_en;
-           
+          
             document.getElementById('card1-title').textContent = config.card1_title || defaultConfig.card1_title;
             document.getElementById('card1-subtitle').textContent = config.card1_subtitle || defaultConfig.card1_subtitle;
             document.getElementById('card2-title').textContent = config.card2_title || defaultConfig.card2_title;
@@ -342,7 +352,9 @@
             document.getElementById('card3-subtitle').textContent = config.card3_subtitle || defaultConfig.card3_subtitle;
             document.getElementById('card4-title').textContent = config.card4_title || defaultConfig.card4_title;
             document.getElementById('card4-subtitle').textContent = config.card4_subtitle || defaultConfig.card4_subtitle;
-           
+            document.getElementById('card5-title').textContent = config.card5_title || defaultConfig.card5_title;
+            document.getElementById('card5-subtitle').textContent = config.card5_subtitle || defaultConfig.card5_subtitle;
+          
             document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
             // Update colors
             const backgroundColor = config.background_color || defaultConfig.background_color;
@@ -375,18 +387,18 @@
             });
             // Update fonts
             document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
-           
+          
             // Update font sizes proportionally
             document.querySelector('.hero h1').style.fontSize = `${baseSize * 2.2}px`;
             document.querySelector('.hero .subtitle-ka').style.fontSize = `${baseSize * 1.25}px`;
             document.querySelector('.hero .subtitle-en').style.fontSize = `${baseSize * 1.125}px`;
             document.querySelector('.section-title').style.fontSize = `${baseSize * 2}px`;
-           
+          
             const cardTitles = document.querySelectorAll('.card-title');
             cardTitles.forEach(title => {
                 title.style.fontSize = `${baseSize * 1.25}px`;
             });
-           
+          
             const cardSubtitles = document.querySelectorAll('.card-subtitle');
             cardSubtitles.forEach(subtitle => {
                 subtitle.style.fontSize = `${baseSize * 0.95}px`;
@@ -475,6 +487,8 @@
                 ["card3_subtitle", config.card3_subtitle || defaultConfig.card3_subtitle],
                 ["card4_title", config.card4_title || defaultConfig.card4_title],
                 ["card4_subtitle", config.card4_subtitle || defaultConfig.card4_subtitle],
+                ["card5_title", config.card5_title || defaultConfig.card5_title],
+                ["card5_subtitle", config.card5_subtitle || defaultConfig.card5_subtitle],
                 ["footer_text", config.footer_text || defaultConfig.footer_text]
             ]);
         }
